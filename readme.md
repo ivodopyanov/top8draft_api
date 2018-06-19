@@ -36,7 +36,7 @@ Draft state contents:
 4. **pack_num**: 0-based integer, current round number. If pack_num = len(boosters) then it means draft is over.
 5. **player_names**: list of player names set at the beginning of the draft.
 6. **bots**: list of boolean set at the beginning of the draft. Information whether web service should make picks for that player or wait for external input.
-7. **packs**: integer matrix of shape (3, 8, 15) (number of packs in draft, number of players in draft, 15). Each element is *multiverseid* of a card in the packs generated for draft. Contents of this matrix remains the same during draft (it doesn't track picks made by player, it only stores starting point).
+7. **packs**: integer matrix of shape (3, 8, 15) (number of packs in draft, number of players in draft, number of cards in pack). Each element is *multiverseid* of a card in the packs generated for draft. Contents of this matrix remains the same during draft (it doesn't track picks made by player, it only stores starting point).
 8. **foils**: boolean matrix of the same shape. Indicates which cards in packs are foil.
 9. **picks**: integer matrix of the same shape. Each element is either 0 (means that pick wasn't made yet) or 1-based position of a chosen card in the pack.
 10. **scores**: real-valued matrix of shape (3, 8, 15, 15). Each element is a score assigned to each card in pack for each pick. If that pick wasn't made yet, then all elements in corresponding line would be 0. Score for missing cards set to -100.0 .
